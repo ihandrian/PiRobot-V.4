@@ -95,7 +95,7 @@ python main.py
     - Adjust the follow speed as needed
 
 The system is optimized for Raspberry Pi 3B and uses lightweight detection models to ensure smooth performance.
-
+## Additional features
 ### Data Collection
 1. Start the data collector:
    ```bash
