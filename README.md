@@ -4,122 +4,110 @@ An advanced autonomous robot system with enhanced safety features, collision det
 
 ## Features
 
-- **Enhanced Safety Monitoring**
-  - Priority-based safety checks
-  - Hardware-accelerated safety monitoring
-  - Predictive safety measures
-  - Emergency stop functionality
-
-- **Improved Collision Detection**
-  - Hierarchical collision detection system
-  - Predictive collision avoidance
-  - Hardware-accelerated image processing
-  - State tracking for better prediction
-
-- **Room Mapping & Navigation**
-  - Real-time room mapping
-  - Path planning and optimization
-  - Obstacle avoidance
-  - Autonomous navigation
-
-- **Data Collection & Training**
-  - Manual data collection interface
-  - Google Colab training support
-  - Synthetic data generation
-  - Model deployment tools
+- Enhanced safety monitoring with real-time sensor feedback
+- Improved collision detection using ultrasonic sensors
+- Room mapping and autonomous navigation
+- Data collection and training system for machine learning
+- Real-time camera feed and sensor data visualization
+- Emergency stop functionality
+- Configurable settings via YAML configuration
 
 ## Project Structure
 
 ```
 PiRobot-V.4/
-├── config/                  # Configuration files
-│   ├── data_collector.yaml  # Data collection settings
-│   └── ...
-├── src/                     # Source code
-│   ├── core/               # Core functionality
-│   │   ├── safety_monitor.py
-│   │   ├── collision_detector.py
-│   │   ├── motor_controller.py
-│   │   └── data_collector.py
-│   └── ...
-├── training/               # Training related code
-│   ├── mapping/           # Room mapping system
-│   ├── collected_data/    # Collected training data
-│   └── requirements.txt   # Training dependencies
-└── docs/                  # Documentation
+├── config/
+│   └── data_collector.yaml    # Configuration settings
+├── src/
+│   └── core/
+│       ├── data_collector.py  # Data collection interface
+│       ├── motor_controller.py # Motor control and safety
+│       └── safety_monitor.py  # Safety monitoring system
+├── training/
+│   ├── mapping/
+│   │   ├── room_mapper.py     # Room mapping implementation
+│   │   ├── dataset.py         # Training dataset handling
+│   │   └── train.py           # Training script
+│   └── requirements.txt       # Training dependencies
+├── docs/
+│   ├── data_collector.md      # Data collector documentation
+│   └── training.md            # Training system documentation
+├── LICENSE                    # GPL-3.0 License
+└── README.md                  # This file
 ```
 
 ## Installation
 
 1. Clone the repository:
-```bash
-git clone https://github.com/ihandrian/PiRobot-V.4.git
-cd PiRobot-V.4
-```
+   ```bash
+   git clone https://github.com/ihandrian/PiRobot-V.4.git
+   cd PiRobot-V.4
+   ```
 
 2. Install dependencies:
-```bash
-pip install -r training/requirements.txt
-```
+   ```bash
+   pip install -r training/requirements.txt
+   ```
 
 3. Configure the system:
-- Copy `config/data_collector.yaml.example` to `config/data_collector.yaml`
-- Adjust settings according to your hardware
+   ```bash
+   mkdir -p config
+   # Edit config/data_collector.yaml as needed
+   ```
 
 ## Usage
 
 ### Data Collection
-
 1. Start the data collector:
-```bash
-python src/core/data_collector.py
-```
+   ```bash
+   python src/core/data_collector.py
+   ```
 
 2. Use the interface to:
-- Start/stop recording
-- Save frames manually
-- Monitor robot status
-- View statistics
+   - Start/stop recording
+   - Save frames manually
+   - View real-time sensor data
+   - Monitor system status
 
 ### Training
-
 1. Collect training data using the data collector
 2. Upload data to Google Colab
-3. Run the training scripts
-4. Deploy the trained model
+3. Run the training script:
+   ```bash
+   python training/mapping/train.py
+   ```
 
 ### Room Mapping
-
-1. Start the room mapping system:
-```bash
-python src/core/room_mapper.py
-```
-
-2. The robot will:
-- Map the environment
-- Plan optimal paths
-- Avoid obstacles
-- Navigate autonomously
+1. Deploy the trained model
+2. Start the room mapper:
+   ```bash
+   python training/mapping/room_mapper.py
+   ```
 
 ## Safety Features
 
-- Emergency stop button
-- Collision detection and avoidance
-- Battery monitoring
-- Temperature monitoring
-- Motor safety controls
+- Real-time monitoring of:
+  - Battery voltage
+  - Motor temperature
+  - Obstacle distances
+  - Emergency stop button
+- Automatic shutdown on critical conditions
+- Hardware watchdog timer
+- Thread-safe operations
 
 ## Requirements
 
 - Python 3.8+
-- OpenCV
-- PyTorch
-- NumPy
-- Other dependencies listed in `training/requirements.txt`
+- Raspberry Pi 4
+- Camera module
+- Ultrasonic sensors
+- Motor drivers
+- Emergency stop button
+- Battery monitoring circuit
 
 ## Contributing
 
-1. Fork the repository
+1. Fork the repository at https://github.com/ihandrian/PiRobot-V.4
 2. Create a feature branch
 3. Commit your changes
 4. Push to the branch
@@ -127,11 +115,10 @@ python src/core/room_mapper.py
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgments
 
-- Google Coral TPU support
-- OpenCV for computer vision
-- PyTorch for deep learning
-- Raspberry Pi hardware support
+- Free Software Foundation for the GPL-3.0 License
+- Raspberry Pi Foundation for hardware support
+- OpenCV and PyTorch communities for software libraries
