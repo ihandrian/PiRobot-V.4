@@ -164,5 +164,5 @@ This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) 
 
 ## Support page:
 
-Paypal https://paypal.me/IrfanHandrian
-Buy me Coffee https://buymeacoffee.com/handrianirv
+- Paypal https://paypal.me/IrfanHandrian
+- Buy me Coffee https://buymeacoffee.com/handrianirv
