@@ -55,7 +55,46 @@ PiRobot-V.4/
    # Edit config/data_collector.yaml as needed
    ```
 
-## Usage
+## How to Use
+1. Clone this repository. Save all the files to your project directory.
+2. Go to your dir "PiRobot-V.4" in your computer.
+3. Run virtual environment of your preference, in this case I´m using `venv` to create environment:
+    ```plaintext
+    python -m venv PiRobot
+    ```
+     - Activate:
+         - Windows:
+          ```plaintext
+          PiRobot\Scripts\activate
+          ```
+         - Linux/macOS:
+          ```plaintext
+          source PiRobot/bin/activate
+          ```
+      - Deactivate:
+          ```plaintext
+          deactivate
+          ```
+3. Install the required dependencies:
+
+```plaintext
+pip3 install -r requirements.txt
+```
+
+
+2. Run the file `main.py`:
+
+```plaintext
+python main.py
+```
+
+3. Access the control panel at `http://<your_pi_ip>:5002`
+4. To use person following:
+    - Toggle "Detection" to enable person detection
+    - Click "Start Following" to make the robot follow the nearest person
+    - Adjust the follow speed as needed
+
+The system is optimized for Raspberry Pi 3B and uses lightweight detection models to ensure smooth performance.
 
 ### Data Collection
 1. Start the data collector:
@@ -98,7 +137,7 @@ PiRobot-V.4/
 ## Requirements
 
 - Python 3.8+
-- Raspberry Pi 4
+- Raspberry Pi 3B or 4
 - Camera module
 - Ultrasonic sensors
 - Motor drivers
