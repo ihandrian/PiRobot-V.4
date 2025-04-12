@@ -61,7 +61,7 @@ PiRobot-V.4/
 
 4. After reboot, activate the virtual environment:
    ```bash
-   source venv/bin/activate
+   source PiRobot/bin/activate
    ```
 
 5. Verify the installation:
