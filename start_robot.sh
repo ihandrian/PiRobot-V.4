@@ -28,13 +28,13 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # Check if virtual environment exists
-if [ ! -d "venv" ]; then
+if [ ! -d "PiRobot" ]; then
     print_error "Virtual environment not found. Please run setup_pi.sh first."
     exit 1
 fi
 
 # Activate virtual environment
-source venv/bin/activate
+source PiRobot/bin/activate
 
 # Check Python version
 python_version=$(python3 -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')

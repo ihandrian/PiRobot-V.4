@@ -102,8 +102,8 @@ systemctl restart dphys-swapfile
 print_status "Installing Python dependencies..."
 
 # Create and activate virtual environment
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv PiRobot
+source PiRobot/bin/activate
 
 # Upgrade pip
 pip install --upgrade pip setuptools wheel
@@ -159,7 +159,7 @@ python3 -c "import cv2; print(f'OpenCV version: {cv2.__version__}')"
 
 print_status "Setup completed successfully!"
 print_warning "Please reboot your Raspberry Pi for all changes to take effect."
-print_warning "After reboot, activate the virtual environment with: source venv/bin/activate"
+print_warning "After reboot, activate the virtual environment with: source PiRobot/bin/activate"
 
 # Create a test script
 cat > test_installation.py << 'EOF'

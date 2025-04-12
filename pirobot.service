@@ -5,7 +5,7 @@ StartLimitIntervalSec=0
 
 [Service]
 Type=simple
-ExecStart=/home/pi/pirobot-v4/venv/bin/python main.py
+ExecStart=/home/pi/pirobot-v4/PiRobot/bin/python main.py
 WorkingDirectory=/home/pi/pirobot-v4
 User=pi
 Group=pi
