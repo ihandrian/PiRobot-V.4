@@ -1,13 +1,48 @@
-numpy>=1.21.0
-opencv-python>=4.5.3
-torch>=1.9.0
-torchvision>=0.10.0
-matplotlib>=3.4.3
-scikit-learn>=0.24.2
-networkx>=2.6.3
-tqdm>=4.62.3
-pillow>=8.3.2
-tensorboard>=2.7.0
-pandas>=1.3.3
-scipy>=1.7.1
-pyyaml>=6.0.1 
+# Core dependencies
+numpy==1.21.6  # Last version with wheels for ARM
+opencv-python==4.5.3.56  # Compatible with Raspberry Pi
+opencv-python-headless==4.5.3.56  # Headless version for servers
+
+# PyTorch - Install from https://pytorch.org/get-started/locally/
+# For Raspberry Pi, use this command:
+# pip install torch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 -f https://download.pytorch.org/whl/torch_stable.html
+
+matplotlib==3.4.3  # Compatible with Raspberry Pi
+tqdm==4.62.3
+scikit-learn==0.24.2  # Last version with wheels for ARM
+scipy==1.7.1  # Compatible with Raspberry Pi
+networkx==2.6.3
+
+# Web interface
+flask==2.0.1  # Lightweight version
+flask-socketio==5.1.1
+websockets==10.0
+
+# Hardware control
+RPi.GPIO==0.7.0
+wiringpi==2.60.0
+spidev==3.5
+
+# Coral TPU support (optional)
+# pycoral>=2.0.0
+# tflite-runtime>=2.5.0
+
+# System monitoring
+psutil==5.8.0
+
+# Configuration and data handling
+pyyaml==5.4.1
+json5==0.9.6
+
+# Development tools (optional)
+# pytest==6.2.5
+# black==21.9b0
+# flake8==3.9.2
+# mypy==0.910
+
+# Type hints
+typing-extensions==3.10.0.2
+
+# Documentation (optional)
+# sphinx==4.1.2
+# sphinx-rtd-theme==0.5.2 

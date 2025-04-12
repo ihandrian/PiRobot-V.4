@@ -11,6 +11,7 @@ An advanced autonomous robot system with enhanced safety features, collision det
 - Real-time camera feed and sensor data visualization
 - Emergency stop functionality
 - Configurable settings via YAML configuration
+- Optimized for Raspberry Pi 3B performance
 
 ## Project Structure
 
@@ -32,11 +33,14 @@ PiRobot-V.4/
 ├── docs/
 │   ├── data_collector.md      # Data collector documentation
 │   └── training.md            # Training system documentation
+├── setup_pi.sh                # Raspberry Pi setup script
 ├── LICENSE                    # GPL-3.0 License
 └── README.md                  # This file
 ```
 
 ## Installation
+
+### Quick Setup (Recommended)
 
 1. Clone the repository:
    ```bash
@@ -44,58 +48,54 @@ PiRobot-V.4/
    cd PiRobot-V.4
    ```
 
-2. Install dependencies:
+2. Run the setup script (as root):
+   ```bash
+   chmod +x setup_pi.sh
+   sudo ./setup_pi.sh
+   ```
+
+3. Reboot your Raspberry Pi:
+   ```bash
+   sudo reboot
+   ```
+
+4. After reboot, activate the virtual environment:
+   ```bash
+   source venv/bin/activate
+   ```
+
+5. Verify the installation:
+   ```bash
+   python test_installation.py
+   ```
+
+### Manual Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/ihandrian/PiRobot-V.4.git
+   cd PiRobot-V.4
+   ```
+
+2. Create and activate virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. Install dependencies:
    ```bash
    pip install -r training/requirements.txt
    ```
 
-3. Configure the system:
+4. Configure the system:
    ```bash
    mkdir -p config
    # Edit config/data_collector.yaml as needed
    ```
 
-## How to Use
-1. Clone this repository. Save all the files to your project directory.
-2. Go to your dir "PiRobot-V.4" in your computer.
-3. Run virtual environment of your preference, in this case I´m using `venv` to create environment:
-    ```plaintext
-    python -m venv PiRobot
-    ```
-     - Activate:
-         - Windows:
-          ```plaintext
-          PiRobot\Scripts\activate
-          ```
-         - Linux/macOS:
-          ```plaintext
-          source PiRobot/bin/activate
-          ```
-      - Deactivate:
-          ```plaintext
-          deactivate
-          ```
-3. Install the required dependencies:
+## Usage
 
-```plaintext
-pip3 install -r requirements.txt
-```
-
-
-2. Run the file `main.py`:
-
-```plaintext
-python main.py
-```
-
-3. Access the control panel at `http://<your_pi_ip>:5002`
-4. To use person following:
-    - Toggle "Detection" to enable person detection
-    - Click "Start Following" to make the robot follow the nearest person
-    - Adjust the follow speed as needed
-
-The system is optimized for Raspberry Pi 3B and uses lightweight detection models to ensure smooth performance.
-## Additional features
 ### Data Collection
 1. Start the data collector:
    ```bash
@@ -133,16 +133,29 @@ The system is optimized for Raspberry Pi 3B and uses lightweight detection model
 - Automatic shutdown on critical conditions
 - Hardware watchdog timer
 - Thread-safe operations
+- Optimized resource management for Raspberry Pi 3B
 
 ## Requirements
 
+- Raspberry Pi 3B (optimized for)
 - Python 3.8+
-- Raspberry Pi 3B or 4
 - Camera module
 - Ultrasonic sensors
 - Motor drivers
 - Emergency stop button
 - Battery monitoring circuit
+- Minimum 2GB swap space (configured by setup script)
+- 256MB GPU memory (configured by setup script)
+
+## System Optimizations
+
+The setup script (`setup_pi.sh`) includes several optimizations for Raspberry Pi 3B:
+- Configured 2GB swap space for better memory management
+- Optimized GPU memory allocation (256MB)
+- Performance-oriented CPU governor
+- Hardware-accelerated OpenCV
+- ARM-compatible PyTorch version
+- Optional Coral TPU support
 
 ## Contributing
 
@@ -161,8 +174,9 @@ This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) 
 - Free Software Foundation for the GPL-3.0 License
 - Raspberry Pi Foundation for hardware support
 - OpenCV and PyTorch communities for software libraries
+- Google Coral team for TPU support
 
-## Support page:
+## Support
 
-- Paypal https://paypal.me/IrfanHandrian
-- Buy me Coffee https://buymeacoffee.com/handrianirv
+- Paypal: https://paypal.me/IrfanHandrian
+- Buy me Coffee: https://buymeacoffee.com/handrianirv

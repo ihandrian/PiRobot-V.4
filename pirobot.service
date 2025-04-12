@@ -1,13 +1,23 @@
 [Unit]
 Description=PiRobot V4
 After=network.target
+StartLimitIntervalSec=0
 
 [Service]
+Type=simple
 ExecStart=/home/pi/pirobot-v4/venv/bin/python main.py
 WorkingDirectory=/home/pi/pirobot-v4
 User=pi
+Group=pi
+Environment=PYTHONUNBUFFERED=1
+Environment=PYTHONPATH=/home/pi/pirobot-v4
 Restart=always
 RestartSec=5
+TimeoutStartSec=300
+TimeoutStopSec=30
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=pirobot
 
 [Install]
 WantedBy=multi-user.target 
