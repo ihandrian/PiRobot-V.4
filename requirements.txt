@@ -1,0 +1,32 @@
+# Core dependencies
+numpy==1.21.0        # Optimized for ARM
+RPi.GPIO==0.7.0      # GPIO control
+opencv-python-headless==4.5.0  # Lighter version of OpenCV
+pyserial==3.5        # Serial communication
+wiringpi==2.60.0     # GPIO control for Raspberry Pi
+psutil==5.8.0        # System resource monitoring
+
+# Web interface
+flask==2.0.0         # Web server
+flask-socketio==5.1.0  # WebSocket support
+websockets==10.0     # WebSocket support
+eventlet==0.33.0     # Required for Flask-SocketIO
+
+# Navigation
+gpsd-py3==0.3.0      # GPS functionality
+pynmea2==1.19.0      # GPS parsing
+
+# Utilities
+python-dotenv==0.19.0  # Environment variables
+pyyaml==5.4.0        # Configuration
+requests==2.26.0     # HTTP client
+
+# Development dependencies (optional)
+pytest==6.2.0        # Testing
+pytest-cov==2.12.0   # Test coverage
+black==21.5b2        # Code formatting
+flake8==3.9.0        # Linting
+mypy==0.910         # Type checking
+isort==5.9.0         # Import sorting
+sphinx==4.0.0        # Documentation
+sphinx-rtd-theme==0.5.0  # Documentation theme 

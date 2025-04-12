@@ -1,0 +1,13 @@
+[Unit]
+Description=PiRobot V4
+After=network.target
+
+[Service]
+ExecStart=/home/pi/pirobot-v4/venv/bin/python main.py
+WorkingDirectory=/home/pi/pirobot-v4
+User=pi
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target 
