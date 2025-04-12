@@ -53,7 +53,7 @@ PiRobot-V.4/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/PiRobot-V.4.git
+git clone https://github.com/ihandrian/PiRobot-V.4.git
 cd PiRobot-V.4
 ```
 
